@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デイカウント — プライバシーポリシー・利用規約</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:       #0e0e10;
+      --surface:  #1a1a1e;
+      --border:   #2a2a2e;
+      --text:     #e4e4e7;
+      --text-sub: #a0a0a8;
+      --accent:   #ff8205;
+      --accent2:  #ff9f40;
+      --radius:   12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
+
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 32px rgba(255, 130, 5, 0.25);
+    }
+
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 4px;
+    }
+
+    .header .subtitle {
+      font-size: 13px;
+      color: var(--text-sub);
+      letter-spacing: 0.08em;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    .nav a {
+      display: inline-block;
+      padding: 8px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      color: var(--text-sub);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: rgba(255, 130, 5, 0.08);
+    }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      margin-bottom: 56px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 22px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .updated {
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-bottom: 28px;
+    }
+
+    .section h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 28px 0 8px;
+      color: var(--text);
+    }
+
+    .section p {
+      color: var(--text-sub);
+      margin-bottom: 12px;
+    }
+
+    .section a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .section a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    .contact {
+      margin-top: 20px;
+      padding: 16px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 14px;
+    }
+
+    .contact strong {
+      color: var(--text);
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 56px 0;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      text-align: center;
+      padding: 32px 0;
+      font-size: 12px;
+      color: var(--text-sub);
+      border-top: 1px solid var(--border);
+      letter-spacing: 0.04em;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 480px) {
+      .header { padding: 40px 0 28px; }
+      .header h1 { font-size: 24px; }
+      .container { padding: 0 18px 60px; }
+      .section h2 { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="app-icon">📅</div>
+    <h1>デイカウント</h1>
+    <div class="subtitle">Privacy Policy &amp; Terms of Use</div>
+  </div>
+
+  <!-- NAV -->
+  <div class="nav">
+    <a href="#privacy">プライバシーポリシー</a>
+    <a href="#terms">利用規約</a>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <div class="section" id="privacy">
+    <h2>プライバシーポリシー</h2>
+    <div class="updated">最終更新日: 2026年5月3日</div>
+
+    <h3>はじめに</h3>
+    <p>デイカウント（以下「本アプリ」）は、sheepboy（以下「開発者」）が提供する iOS アプリケーションです。本ポリシーでは、本アプリにおける情報の取り扱いについてご説明します。</p>
+
+    <h3>データの収集について</h3>
+    <p>本アプリは、ユーザーの個人情報を収集、送信、または外部サーバーに保存することはありません。すべてのデータ（イベント情報、設定、プレミアム状態など）はお使いのデバイス内にのみ保存されます。</p>
+
+    <h3>ネットワーク通信</h3>
+    <p>本アプリはバックエンドサーバーを持たず、インターネット通信を行いません。ただし、App 内課金（In-App Purchase）の処理において、Apple のサーバーとの通信が発生します。この通信は Apple が管理しており、開発者がアクセスすることはできません。</p>
+
+    <h3>App 内課金</h3>
+    <p>本アプリでは、プレミアム機能のアンロックのために Apple の In-App Purchase を使用します。課金の処理はすべて Apple が行い、開発者がお支払い情報にアクセスすることはありません。</p>
+
+    <h3>ローカル通知</h3>
+    <p>本アプリは、誕生日や記念日をお知らせするためにローカル通知を使用します。通知はデバイス上でスケジュールされ、外部サーバーへの情報送信は一切行いません。通知の許可はユーザーがいつでもオン・オフを切り替えることができます。</p>
+
+    <h3>分析・トラッキング</h3>
+    <p>本アプリは、広告 SDK、分析ツール、トラッキング技術を一切使用していません。</p>
+
+    <h3>お子様のプライバシー</h3>
+    <p>本アプリは、13 歳未満のお子様から意図的に個人情報を収集することはありません。</p>
+
+    <h3>ポリシーの変更</h3>
+    <p>本ポリシーは予告なく変更される場合があります。重要な変更がある場合は、本ページにて更新します。</p>
+
+    <div class="contact">
+      <strong>お問い合わせ：</strong> <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TERMS OF USE -->
+  <div class="section" id="terms">
+    <h2>利用規約</h2>
+    <div class="updated">最終更新日: 2026年5月3日</div>
+
+    <h3>サービスの概要</h3>
+    <p>デイカウントは、誕生日や記念日までの残り日数をカウントダウン表示し、通知やウィジェットで大切な日を管理できる iOS アプリです。</p>
+
+    <h3>利用条件</h3>
+    <p>本アプリをダウンロードまたは使用することにより、本利用規約に同意したものとみなされます。同意いただけない場合は、本アプリの使用をお控えください。</p>
+
+    <h3>知的財産権</h3>
+    <p>本アプリのすべてのコンテンツ、デザイン、コードは開発者に帰属します。無断での複製、改変、再配布は禁止されています。</p>
+
+    <h3>App 内課金</h3>
+    <p>プレミアム機能は買い切り型の App 内課金により提供されます。購入は Apple ID に請求されます。返金については Apple のポリシーに準じます。</p>
+
+    <h3>免責事項</h3>
+    <p>本アプリは「現状のまま」提供されます。開発者は、本アプリの使用または使用不能から生じるいかなる損害についても責任を負いません。データの正確性、完全性、適時性について保証するものではありません。</p>
+
+    <h3>規約の変更</h3>
+    <p>本規約は予告なく変更される場合があります。変更後も本アプリを継続して使用された場合、変更後の規約に同意したものとみなします。</p>
+
+    <div class="contact">
+      <strong>お問い合わせ：</strong> <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 sheepboy. All rights reserved.
+</div>
+
+</body>
+</html>
