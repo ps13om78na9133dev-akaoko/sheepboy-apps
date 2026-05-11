@@ -1,280 +1,668 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>デイカウント — プライバシーポリシー・利用規約</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day-Count - Privacy Policy & Terms</title>
+
   <style>
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     :root {
-      --bg:       #0e0e10;
-      --surface:  #1a1a1e;
-      --border:   #2a2a2e;
-      --text:     #e4e4e7;
-      --text-sub: #a0a0a8;
-      --accent:   #ff8205;
-      --accent2:  #ff9f40;
-      --radius:   12px;
+      --bg: #0e0e10;
+      --surface: #1a1a1e;
+      --border: #2a2a2e;
+      --text: #e4e4e7;
+      --sub: #a0a0a8;
+      --accent: #ff8205;
+      --accent2: #ff9f40;
+      --radius: 14px;
     }
-
-    html { scroll-behavior: smooth; }
 
     body {
-      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.8;
-      font-size: 15px;
-      -webkit-font-smoothing: antialiased;
+      padding-bottom: 80px;
     }
 
-    /* ===== LAYOUT ===== */
     .container {
-      max-width: 700px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 0 24px 80px;
+      padding: 24px;
     }
 
-    /* ===== HEADER ===== */
     .header {
       text-align: center;
-      padding: 60px 0 40px;
+      padding: 48px 0 24px;
     }
 
-    .app-icon {
-      width: 80px;
-      height: 80px;
+    .icon {
+      width: 90px;
+      height: 90px;
+      border-radius: 24px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border-radius: 20px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 38px;
-      margin-bottom: 16px;
-      box-shadow: 0 8px 32px rgba(255, 130, 5, 0.25);
-    }
-
-    .header h1 {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      margin-bottom: 4px;
-    }
-
-    .header .subtitle {
-      font-size: 13px;
-      color: var(--text-sub);
-      letter-spacing: 0.08em;
-    }
-
-    /* ===== NAV ===== */
-    .nav {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      margin-bottom: 48px;
-    }
-
-    .nav a {
-      display: inline-block;
-      padding: 8px 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      color: var(--text-sub);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 500;
-      transition: all 0.2s;
-    }
-
-    .nav a:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-      background: rgba(255, 130, 5, 0.08);
-    }
-
-    /* ===== SECTIONS ===== */
-    .section {
-      margin-bottom: 56px;
-    }
-
-    .section h2 {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--text);
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      font-size: 42px;
+      margin: 0 auto 18px;
+      box-shadow: 0 8px 30px rgba(255, 130, 5, .25);
     }
 
-    .section h2::before {
-      content: '';
-      display: inline-block;
-      width: 4px;
-      height: 22px;
-      background: var(--accent);
-      border-radius: 2px;
+    h1 {
+      font-size: 32px;
+      margin-bottom: 6px;
     }
 
-    .updated {
-      font-size: 12px;
-      color: var(--text-sub);
-      margin-bottom: 28px;
-    }
-
-    .section h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin: 28px 0 8px;
-      color: var(--text);
-    }
-
-    .section p {
-      color: var(--text-sub);
-      margin-bottom: 12px;
-    }
-
-    .section a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-
-    .section a:hover {
-      border-bottom-color: var(--accent);
-    }
-
-    .contact {
-      margin-top: 20px;
-      padding: 16px 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+    .subtitle {
+      color: var(--sub);
       font-size: 14px;
     }
 
-    .contact strong {
+    .lang-nav {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 36px 0;
+    }
+
+    .lang-nav button {
+      background: var(--surface);
       color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 18px;
+      cursor: pointer;
+      transition: .2s;
     }
 
-    /* ===== DIVIDER ===== */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 56px 0;
+    .lang-nav button.active,
+    .lang-nav button:hover {
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
-    /* ===== FOOTER ===== */
-    .footer {
+    .lang {
+      display: none;
+    }
+
+    .lang.active {
+      display: block;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      margin-top: 24px;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    p,
+    li {
+      color: var(--sub);
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .updated {
+      color: var(--sub);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .contact {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid var(--border);
+    }
+
+    a {
+      color: var(--accent2);
+    }
+
+    footer {
       text-align: center;
-      padding: 32px 0;
+      margin-top: 40px;
+      color: var(--sub);
       font-size: 12px;
-      color: var(--text-sub);
-      border-top: 1px solid var(--border);
-      letter-spacing: 0.04em;
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 480px) {
-      .header { padding: 40px 0 28px; }
-      .header h1 { font-size: 24px; }
-      .container { padding: 0 18px 60px; }
-      .section h2 { font-size: 19px; }
+    @media (max-width: 600px) {
+      .card {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="app-icon">📅</div>
-    <h1>デイカウント</h1>
-    <div class="subtitle">Privacy Policy &amp; Terms of Use</div>
-  </div>
-
-  <!-- NAV -->
-  <div class="nav">
-    <a href="#privacy">プライバシーポリシー</a>
-    <a href="#terms">利用規約</a>
-  </div>
-
-  <!-- PRIVACY POLICY -->
-  <div class="section" id="privacy">
-    <h2>プライバシーポリシー</h2>
-    <div class="updated">最終更新日: 2026年5月3日</div>
-
-    <h3>はじめに</h3>
-    <p>デイカウント（以下「本アプリ」）は、sheepboy（以下「開発者」）が提供する iOS アプリケーションです。本ポリシーでは、本アプリにおける情報の取り扱いについてご説明します。</p>
-
-    <h3>データの収集について</h3>
-    <p>本アプリは、ユーザーの個人情報を収集、送信、または外部サーバーに保存することはありません。すべてのデータ（イベント情報、設定、プレミアム状態など）はお使いのデバイス内にのみ保存されます。</p>
-
-    <h3>ネットワーク通信</h3>
-    <p>本アプリはバックエンドサーバーを持たず、インターネット通信を行いません。ただし、App 内課金（In-App Purchase）の処理において、Apple のサーバーとの通信が発生します。この通信は Apple が管理しており、開発者がアクセスすることはできません。</p>
-
-    <h3>App 内課金</h3>
-    <p>本アプリでは、プレミアム機能のアンロックのために Apple の In-App Purchase を使用します。課金の処理はすべて Apple が行い、開発者がお支払い情報にアクセスすることはありません。</p>
-
-    <h3>ローカル通知</h3>
-    <p>本アプリは、誕生日や記念日をお知らせするためにローカル通知を使用します。通知はデバイス上でスケジュールされ、外部サーバーへの情報送信は一切行いません。通知の許可はユーザーがいつでもオン・オフを切り替えることができます。</p>
-
-    <h3>分析・トラッキング</h3>
-    <p>本アプリは、広告 SDK、分析ツール、トラッキング技術を一切使用していません。</p>
-
-    <h3>お子様のプライバシー</h3>
-    <p>本アプリは、13 歳未満のお子様から意図的に個人情報を収集することはありません。</p>
-
-    <h3>ポリシーの変更</h3>
-    <p>本ポリシーは予告なく変更される場合があります。重要な変更がある場合は、本ページにて更新します。</p>
-
-    <div class="contact">
-      <strong>お問い合わせ：</strong> <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+    <div class="header">
+      <div class="icon">📅</div>
+      <h1>Day-Count</h1>
+      <div class="subtitle">Privacy Policy & Terms of Use</div>
     </div>
-  </div>
 
-  <hr class="divider">
-
-  <!-- TERMS OF USE -->
-  <div class="section" id="terms">
-    <h2>利用規約</h2>
-    <div class="updated">最終更新日: 2026年5月3日</div>
-
-    <h3>サービスの概要</h3>
-    <p>デイカウントは、誕生日や記念日までの残り日数をカウントダウン表示し、通知やウィジェットで大切な日を管理できる iOS アプリです。</p>
-
-    <h3>利用条件</h3>
-    <p>本アプリをダウンロードまたは使用することにより、本利用規約に同意したものとみなされます。同意いただけない場合は、本アプリの使用をお控えください。</p>
-
-    <h3>知的財産権</h3>
-    <p>本アプリのすべてのコンテンツ、デザイン、コードは開発者に帰属します。無断での複製、改変、再配布は禁止されています。</p>
-
-    <h3>App 内課金</h3>
-    <p>プレミアム機能は買い切り型の App 内課金により提供されます。購入は Apple ID に請求されます。返金については Apple のポリシーに準じます。</p>
-
-    <h3>免責事項</h3>
-    <p>本アプリは「現状のまま」提供されます。開発者は、本アプリの使用または使用不能から生じるいかなる損害についても責任を負いません。データの正確性、完全性、適時性について保証するものではありません。</p>
-
-    <h3>規約の変更</h3>
-    <p>本規約は予告なく変更される場合があります。変更後も本アプリを継続して使用された場合、変更後の規約に同意したものとみなします。</p>
-
-    <div class="contact">
-      <strong>お問い合わせ：</strong> <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+    <div class="lang-nav">
+      <button class="active" onclick="showLang('ja', this)">日本語</button>
+      <button onclick="showLang('en', this)">English</button>
+      <button onclick="showLang('zh', this)">简体中文</button>
+      <button onclick="showLang('fr', this)">Français</button>
+      <button onclick="showLang('es', this)">Español</button>
     </div>
+
+    <!-- JAPANESE -->
+    <div class="lang active" id="ja">
+
+      <div class="card">
+        <h2>プライバシーポリシー</h2>
+        <div class="updated">最終更新日: 2026年5月11日</div>
+
+        <h3>1. はじめに</h3>
+        <p>デイカウント（以下「本アプリ」）は、sheepboy（以下「開発者」）が提供する iOS アプリケーションです。本アプリは、ユーザーのプライバシーを最優先に考え、情報の収集を最小限に留めています。</p>
+
+        <h3>2. データの収集と利用目的</h3>
+        <p>本アプリは、氏名、メールアドレス、電話番号などの個人情報を収集、送信、または外部サーバーに保存することはありません。</p>
+        <ul>
+          <li><strong>イベントデータ：</strong> ユーザーが入力したイベント名、日付、アイコン等の情報は、すべてデバイス内の安全な領域（SwiftData等）に保存されます。</li>
+          <li><strong>バックアップ：</strong>
+            iOS標準のiCloudバックアップ機能を利用している場合、データはAppleが提供するインフラを介して保存されますが、開発者がこれらのデータにアクセスすることはありません。</li>
+        </ul>
+
+        <h3>3. ネットワーク通信について</h3>
+        <p>本アプリは独自のバックエンドサーバーを持たず、基本機能において外部へのデータ送信を行いません。ただし、以下のサービスにおいてAppleのシステムを利用した通信が発生します。</p>
+        <ul>
+          <li>App 内課金（Apple Pay / In-App Purchase）の処理</li>
+          <li>システムの標準的な不具合レポート（ユーザーが同意している場合のみ）</li>
+        </ul>
+
+        <h3>4. 広告および分析ツール</h3>
+        <p>本アプリには、サードパーティ製の広告配信SDKや、個人の行動を追跡するトラッキングツールは含まれておりません。</p>
+
+        <h3>5. お子様のプライバシー</h3>
+        <p>本アプリは、13歳未満のお子様を含むすべてのユーザーから、意図的に個人情報を収集することはありません。</p>
+
+        <div class="contact">
+          <strong>プライバシーに関するお問い合わせ：</strong> <br>
+          <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+        </div>
+
+
+      </div>
+
+      <div class="card">
+        <h2>利用規約</h2>
+        <div class="updated">最終更新日: 2026年5月11日</div>
+
+        <h3>第1条（同意）</h3>
+        <p>ユーザーは、本アプリをダウンロードおよび使用することにより、本規約に同意したものとみなされます。</p>
+
+        <h3>第2条（知的財産権）</h3>
+        <p>本アプリに関する一切の著作権、商標権等の知的財産権は、開発者または正当な権利者に帰属します。複製、翻案、リバースエンジニアリング、逆コンパイル、または逆アセンブルを禁じます。</p>
+
+        <h3>第3条（プレミアム機能）</h3>
+        <p>一部の機能は有料（プレミアム）として提供されます。決済はApple IDを通じて行われ、返金、キャンセル等はAppleの規定に従うものとします。機種変更時のリストア（復元）は、購入時と同じApple
+          IDを使用することで可能です。</p>
+
+        <h3>第4条（禁止事項）</h3>
+        <p>ユーザーは本アプリの利用にあたり、以下の行為を行ってはなりません。</p>
+        <ul>
+          <li>本アプリの運営を妨げる行為</li>
+          <li>開発者または第三者に不利益、損害、不快感を与える行為</li>
+          <li>その他、開発者が不適切と判断する行為</li>
+        </ul>
+
+        <h3>第5条（免責事項）</h3>
+        <p>1. 開発者は、本アプリの正確性、有用性、安全性等について、明示的にも黙示的にも一切保証しません。<br>
+          2. <strong>データの管理はユーザーの責任</strong>で行うものとし、本アプリの削除、デバイスの紛失、故障、バックアップの不備等により生じたデータ消失について、開発者は一切の責任を負いません。<br>
+          3.
+          本アプリの利用によりユーザーに生じた損害について、開発者に故意または重過失がある場合を除き、開発者は直接的・間接的を問わず一切の責任を負いません。賠償責任を負う場合でも、当該ユーザーが本アプリに対して支払った金額（プレミアム機能の購入代金）を上限とします。
+        </p>
+
+        <h3>第6条（サービスの停止・変更）</h3>
+        <p>開発者は、予告なく本アプリのアップデート、機能変更、または配信を停止する権利を留保します。</p>
+
+        <h3>第7条（準拠法および管轄裁判所）</h3>
+        <p>本規約の解釈にあたっては日本法を準拠法とし、本アプリに関連して紛争が生じた場合は、開発者の居住地を管轄する裁判所（例：大津地方裁判所）を第一審の専属的合意管轄裁判所とします。</p>
+
+        <div class="contact">
+          <strong>規約に関するお問い合わせ：</strong> <br>
+          <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ENGLISH -->
+    <div class="lang" id="en">
+      <div class="card">
+        <h2>Privacy Policy</h2>
+        <div class="updated">Last Updated: May 11, 2026</div>
+
+        <h3>1. Introduction</h3>
+        <p>Day-Count (hereinafter referred to as "the App") is an iOS application provided by sheepboy (hereinafter
+          referred to as "the Developer"). The Developer prioritizes user privacy and minimizes the collection of
+          information.</p>
+
+        <h3>2. Data Collection and Purpose of Use</h3>
+        <p>The App does not collect, transmit, or store personal information such as names, email addresses, or phone
+          numbers on any external servers.</p>
+        <ul>
+          <li><strong>Event Data:</strong> Information entered by the user, such as event names, dates, and icons, is
+            stored exclusively within the secure local area of your device (e.g., SwiftData).</li>
+          <li><strong>Backup:</strong> If you use the standard iOS iCloud backup feature, data may be stored via Apple's
+            infrastructure. The Developer does not have access to this data.</li>
+        </ul>
+
+        <h3>3. Network Communication</h3>
+        <p>The App does not have its own backend server and does not transmit data externally for its basic functions.
+          However, communication with Apple's systems occurs in the following scenarios:</p>
+        <ul>
+          <li>Processing of In-App Purchases (via Apple Pay / In-App Purchase).</li>
+          <li>Standard system crash reporting (only if the user has consented to share this with developers via iOS
+            settings).</li>
+        </ul>
+
+        <h3>4. Advertising and Analytics</h3>
+        <p>The App does not include third-party advertising SDKs or tracking tools that monitor individual behavior.</p>
+
+        <h3>5. Children's Privacy</h3>
+        <p>The App does not knowingly collect personal information from any user, including children under the age of
+          13.</p>
+
+        <div class="contact">
+          <strong>Privacy Inquiries:</strong> <br>
+          <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <h2>Terms of Use</h2>
+        <div class="updated">Last Updated: May 11, 2026</div>
+
+        <h3>Section 1 (Consent)</h3>
+        <p>By downloading and using the App, users are deemed to have agreed to these Terms of Use.</p>
+
+        <h3>Section 2 (Intellectual Property Rights)</h3>
+        <p>All intellectual property rights, including copyrights and trademarks related to the App, belong to the
+          Developer or the respective right holders. Replication, adaptation, reverse engineering, decompiling, or
+          disassembling is strictly prohibited.</p>
+
+        <h3>Section 3 (Premium Features)</h3>
+        <p>Certain features are provided as paid "Premium" content. Payments are processed through your Apple ID, and
+          refunds or cancellations are subject to Apple's policies. Restoring purchases during device changes is
+          possible by using the same Apple ID used at the time of purchase.</p>
+
+        <h3>Section 4 (Prohibited Acts)</h3>
+        <p>Users shall not engage in the following acts when using the App:</p>
+        <ul>
+          <li>Acts that interfere with the operation of the App.</li>
+          <li>Acts that cause disadvantage, damage, or discomfort to the Developer or a third party.</li>
+          <li>Any other acts deemed inappropriate by the Developer.</li>
+        </ul>
+
+        <h3>Section 5 (Disclaimer of Warranties and Limitation of Liability)</h3>
+        <p>1. The App is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis. The
+          Developer makes no warranties, express or implied, regarding the accuracy, usefulness, or safety of the
+          App.<br>
+          2. <strong>Data management is the sole responsibility of the user.</strong> The Developer shall not be liable
+          for any data loss resulting from the deletion of the App, loss or failure of the device, or inadequate
+          backups.<br>
+          3. To the maximum extent permitted by applicable law, the Developer shall not be liable for any direct,
+          indirect, incidental, or consequential damages arising from the use of the App. In any event, the Developer's
+          total liability shall not exceed the amount paid by the user for the App's premium features.</p>
+
+        <h3>Section 6 (Service Suspension and Changes)</h3>
+        <p>The Developer reserves the right to update the App, change its features, or suspend its distribution without
+          prior notice.</p>
+
+        <h3>Section 7 (Governing Law and Jurisdiction)</h3>
+        <p>These Terms shall be governed by and construed in accordance with the laws of Japan. Any disputes arising in
+          connection with the App shall be subject to the exclusive jurisdiction of the court having jurisdiction over
+          the Developer's place of residence as the court of first instance.</p>
+
+        <div class="contact">
+          <strong>Terms Inquiries:</strong> <br>
+          <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CHINESE -->
+    <div class="lang" id="zh">
+      <div class="card">
+        <h2>隐私政策</h2>
+        <div class="updated">最后更新：2026年5月11日</div>
+
+        <h3>1. 前言</h3>
+        <p>Day-Count（以下简称“本应用”）是由 sheepboy（以下简称“开发者”）提供的 iOS 应用程序。开发者非常重视用户隐私，并将信息的收集保持在最低限度。</p>
+
+        <h3>2. 数据收集与使用目的</h3>
+        <p>本应用不会在任何外部服务器上收集、传输或存储用户的个人信息，如姓名、电子邮件地址或电话号码。</p>
+        <ul>
+          <li><strong>活动数据：</strong> 用户输入的活动名称、日期、图标等信息，均仅存储在您设备内的安全区域（如 SwiftData 等）中。</li>
+          <li><strong>备份：</strong> 如果您使用 iOS 标准的 iCloud 备份功能，数据将通过 Apple 提供的基础设施进行存储，但开发者无法访问这些数据。</li>
+        </ul>
+
+        <h3>3. 网络通信</h3>
+        <p>本应用没有自己的后端服务器，基本功能不进行外部数据传输。但在以下情况下会与 Apple 的系统进行通信：</p>
+        <ul>
+          <li>处理 App 内购买（通过 Apple Pay / In-App Purchase）。</li>
+          <li>标准系统故障报告（仅在用户同意与开发者共享的情况下通过 iOS 设置发送）。</li>
+        </ul>
+
+        <h3>4. 广告与分析工具</h3>
+        <p>本应用不包含任何第三方广告分发 SDK 或追踪个人行为的分析工具。</p>
+
+        <h3>5. 未成年人隐私保护</h3>
+        <p>本应用不会故意收集包括 13 岁以下未成年人在内的任何用户的个人信息。</p>
+
+        <div class="contact">
+          <strong>隐私事宜咨询：</strong> <br>
+          <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+        </div>
+
+
+      </div>
+
+      <div class="card">
+        <h2>使用条款</h2>
+        <div class="updated">最后更新：2026年5月11日</div>
+
+        <h3>第 1 条（同意）</h3>
+        <p>用户通过下载和使用本应用，即视为同意本协议的所有条款。</p>
+
+        <h3>第 2 条（知识产权）</h3>
+        <p>与本应用相关的所有版权、商标权等知识产权均归开发者或合法的权利人所有。严禁复制、改编、反向工程、反编译或反汇编本应用。</p>
+
+        <h3>第 3 条（高级功能）</h3>
+        <p>部分功能作为付费（高级）内容提供。支付通过 Apple ID 进行，退款和取消等须遵循 Apple 的相关规定。更换设备时的功能恢复可通过使用购买时相同的 Apple ID 来实现。</p>
+
+        <h3>第 4 条（禁止行为）</h3>
+        <p>用户在使用本应用时，不得从事以下行为：</p>
+        <ul>
+          <li>妨碍本应用运营的行为。</li>
+          <li>给开发者或第三方造成不利、损害或不快感。</li>
+          <li>开发者认为不当的其他行为。</li>
+        </ul>
+
+        <h3>第 5 条（免责声明）</h3>
+        <p>1. 开发者不对本应用的准确性、有用性、安全性等做任何明示或暗示的保证。<br>
+          2. <strong>数据管理由用户自行负责。</strong> 开发者对于因卸载本应用、设备丢失或损坏、备份不当等导致的数据丢失不承担任何责任。<br>
+          3. 对于用户因使用本应用而遭受的损害，除开发者存在故意或重大过失外，开发者不承担任何直接或间接责任。即便承担赔偿责任，其上限也仅限于该用户购买本应用高级功能的金额。</p>
+
+        <h3>第 6 条（服务中止与变更）</h3>
+        <p>开发者保留在不另行通知的情况下更新应用、变更功能或停止发布的权利。</p>
+
+        <h3>第 7 条（准据法与管辖法院）</h3>
+        <p>本协议的解释适用日本法律。因本应用引起的一切纠纷，应提交至开发者居住地所在地的法院作为第一审专属协议管辖法院。</p>
+
+        <div class="contact">
+          <strong>协议相关咨询：</strong> <br>
+          <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FRENCH -->
+    <div class="lang" id="fr">
+      <div class="card">
+        <h2>Politique de confidentialité</h2>
+        <div class="updated">Dernière mise à jour : 11 mai 2026</div>
+
+        <h3>1. Introduction</h3>
+        <p>Day-Count (ci-après dénommée « l'Application ») est une application iOS fournie par sheepboy (ci-après
+          dénommé « le Développeur »). Le Développeur accorde une importance primordiale à la vie privée des
+          utilisateurs et limite la collecte d'informations au strict minimum.</p>
+
+        <h3>2. Collecte et finalité des données</h3>
+        <p>L'Application ne collecte, ne transmet et ne stocke aucune information personnelle telle que le nom,
+          l'adresse e-mail ou le numéro de téléphone sur des serveurs externes.</p>
+        <ul>
+          <li><strong>Données d'événement :</strong> Les informations saisies par l'utilisateur (noms d'événements,
+            dates, icônes, etc.) sont stockées exclusivement dans la zone sécurisée de votre appareil (via SwiftData,
+            etc.).</li>
+          <li><strong>Sauvegarde :</strong> Si vous utilisez la fonction de sauvegarde iCloud standard d'iOS, les
+            données sont stockées via l'infrastructure fournie par Apple. Le Développeur n'a aucun accès à ces données.
+          </li>
+        </ul>
+
+        <h3>3. Communications réseau</h3>
+        <p>L'Application ne possède pas de serveur backend propre et n'effectue aucune transmission de données vers
+          l'extérieur pour ses fonctions de base. Toutefois, des communications avec les systèmes d'Apple ont lieu dans
+          les cas suivants :</p>
+        <ul>
+          <li>Traitement des achats intégrés (via Apple Pay / In-App Purchase).</li>
+          <li>Rapports d'erreurs système standard (uniquement si l'utilisateur a consenti au partage avec les
+            développeurs via les réglages iOS).</li>
+        </ul>
+
+        <h3>4. Publicité et outils d'analyse</h3>
+        <p>L'Application ne contient aucun SDK de distribution publicitaire tiers ni outil de suivi (tracking) analysant
+          le comportement individuel.</p>
+
+        <h3>5. Vie privée des enfants</h3>
+        <p>L'Application ne collecte intentionnellement aucune information personnelle auprès des utilisateurs, y
+          compris les enfants de moins de 13 ans.</p>
+
+        <div class="contact">
+          <strong>Contact concernant la confidentialité :</strong> <br>
+          <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+        </div>
+
+
+      </div>
+
+      <div class="card">
+        <h2>Conditions d’utilisation</h2>
+        <div class="updated">Dernière mise à jour : 11 mai 2026</div>
+
+        <h3>Article 1 (Consentement)</h3>
+        <p>En téléchargeant et en utilisant l'Application, l'utilisateur est réputé avoir accepté les présentes
+          Conditions d'utilisation.</p>
+
+        <h3>Article 2 (Propriété intellectuelle)</h3>
+        <p>Tous les droits de propriété intellectuelle relatifs à l'Application (droits d'auteur, marques, etc.)
+          appartiennent au Développeur ou aux titulaires de droits légitimes. Toute reproduction, adaptation, ingénierie
+          inverse, décompilation ou désassemblage est interdit.</p>
+
+        <h3>Article 3 (Fonctionnalités Premium)</h3>
+        <p>Certaines fonctionnalités sont proposées sous forme de contenu payant (Premium). Le paiement s'effectue via
+          l'identifiant Apple ID, et les remboursements ou annulations sont soumis aux règles d'Apple. La restauration
+          des achats lors d'un changement d'appareil est possible en utilisant le même Apple ID que celui utilisé lors
+          de l'achat.</p>
+
+        <h3>Article 4 (Interdictions)</h3>
+        <p>Lors de l'utilisation de l'Application, l'utilisateur s'interdit les actions suivantes :</p>
+        <ul>
+          <li>Actions entravant le bon fonctionnement de l'Application.</li>
+          <li>Actions causant un préjudice, un dommage ou un désagrément au Développeur ou à un tiers.</li>
+          <li>Toute autre action jugée inappropriée par le Développeur.</li>
+        </ul>
+
+        <h3>Article 5 (Exonération de responsabilité)</h3>
+        <p>1. Le Développeur ne garantit aucunement, de manière expresse ou implicite, l'exactitude, l'utilité ou la
+          sécurité de l'Application.<br>
+          2. <strong>La gestion des données relève de la responsabilité de l'utilisateur.</strong> Le Développeur
+          décline toute responsabilité en cas de perte de données résultant de la suppression de l'Application, de la
+          perte ou de la panne de l'appareil, ou d'une sauvegarde insuffisante.<br>
+          3. Concernant les dommages subis par l'utilisateur du fait de l'utilisation de l'Application, le Développeur
+          décline toute responsabilité, directe ou indirecte, sauf en cas de faute intentionnelle ou de négligence grave
+          du Développeur. Même en cas de responsabilité, celle-ci est limitée au montant payé par l'utilisateur pour
+          l'achat des fonctionnalités Premium.</p>
+
+        <h3>Article 6 (Suspension et modification du service)</h3>
+        <p>Le Développeur se réserve le droit de mettre à jour l'Application, d'en modifier les fonctionnalités ou d'en
+          interrompre la distribution sans préavis.</p>
+
+        <h3>Article 7 (Droit applicable et juridiction compétente)</h3>
+        <p>L'interprétation des présentes Conditions est régie par le droit japonais. En cas de litige relatif à
+          l'Application, le tribunal compétent du lieu de résidence du Développeur sera le tribunal exclusif de première
+          instance.</p>
+
+        <div class="contact">
+          <strong>Contact concernant les conditions :</strong> <br>
+          <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SPANISH -->
+    <div class="lang" id="es">
+      <div class="card">
+        <h2>Política de privacidad</h2>
+        <div class="updated">Última actualización: 11 de mayo de 2026</div>
+
+        <h3>1. Introducción</h3>
+        <p>Day-Count (en adelante, "la Aplicación") es una aplicación para iOS proporcionada por sheepboy (en adelante,
+          "el Desarrollador"). El Desarrollador prioriza la privacidad del usuario y minimiza la recopilación de
+          información al mínimo estrictamente necesario.</p>
+
+        <h3>2. Recopilación de datos y finalidad</h3>
+        <p>La Aplicación no recopila, transmite ni almacena información personal como nombres, direcciones de correo
+          electrónico o números de teléfono en ningún servidor externo.</p>
+        <ul>
+          <li><strong>Datos de eventos:</strong> La información introducida por el usuario (nombres de eventos, fechas,
+            iconos, etc.) se almacena exclusivamente en el área local segura de su dispositivo (mediante SwiftData,
+            etc.).</li>
+          <li><strong>Copia de seguridad:</strong> Si utiliza la función estándar de copia de seguridad de iCloud de
+            iOS, los datos se almacenarán a través de la infraestructura proporcionada por Apple. El Desarrollador no
+            tiene acceso a estos datos.</li>
+        </ul>
+
+        <h3>3. Comunicación por red</h3>
+        <p>La Aplicación no posee un servidor backend propio y no realiza transmisiones de datos externas para sus
+          funciones básicas. No obstante, la comunicación con los sistemas de Apple se produce en los siguientes casos:
+        </p>
+        <ul>
+          <li>Procesamiento de compras dentro de la aplicación (vía Apple Pay / In-App Purchase).</li>
+          <li>Informes estándar de fallos del sistema (solo si el usuario ha consentido compartirlos con los
+            desarrolladores a través de los ajustes de iOS).</li>
+        </ul>
+
+        <h3>4. Publicidad y análisis</h3>
+        <p>La Aplicación no incluye SDK de distribución de publicidad de terceros ni herramientas de seguimiento que
+          analicen el comportamiento individual.</p>
+
+        <h3>5. Privacidad infantil</h3>
+        <p>La Aplicación no recopila intencionadamente información personal de ningún usuario, incluidos niños menores
+          de 13 años.</p>
+
+        <div class="contact">
+          <strong>Contacto sobre privacidad:</strong> <br>
+          <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <h2>Términos de uso</h2>
+        <div class="updated">Última actualización: 11 de mayo de 2026</div>
+
+        <h3>Artículo 1 (Consentimiento)</h3>
+        <p>Al descargar y utilizar la Aplicación, se considera que el usuario acepta los presentes Términos de Uso.</p>
+
+        <h3>Artículo 2 (Propiedad Intelectual)</h3>
+        <p>Todos los derechos de propiedad intelectual relacionados con la Aplicación (derechos de autor, marcas, etc.)
+          pertenecen al Desarrollador o a sus legítimos titulares. Queda prohibida la reproducción, adaptación,
+          ingeniería inversa, descompilación o desensamblaje de la misma.</p>
+
+        <h3>Artículo 3 (Funciones Premium)</h3>
+        <p>Algunas funciones se ofrecen como contenido de pago (Premium). El pago se realiza a través del Apple ID, y
+          los reembolsos o cancelaciones se rigen por las normativas de Apple. La restauración de compras al cambiar de
+          dispositivo es posible utilizando el mismo Apple ID usado en el momento de la compra.</p>
+
+        <h3>Artículo 4 (Prohibiciones)</h3>
+        <p>Al utilizar la Aplicación, el usuario se compromete a no realizar las siguientes acciones:</p>
+        <ul>
+          <li>Acciones que interfieran con el funcionamiento de la Aplicación.</li>
+          <li>Acciones que causen perjuicio, daño o molestias al Desarrollador o a terceros.</li>
+          <li>Cualquier otra acción que el Desarrollador considere inapropiada.</li>
+        </ul>
+
+        <h3>Artículo 5 (Exclusión de garantías y limitación de responsabilidad)</h3>
+        <p>1. El Desarrollador no garantiza, de forma expresa o implícita, la exactitud, utilidad o seguridad de la
+          Aplicación.<br>
+          2. <strong>La gestión de los datos es responsabilidad exclusiva del usuario.</strong> El Desarrollador no se
+          hace responsable de la pérdida de datos derivada del borrado de la Aplicación, pérdida o fallo del
+          dispositivo, o de una copia de seguridad insuficiente.<br>
+          3. Respecto a los daños sufridos por el usuario a causa del uso de la Aplicación, el Desarrollador no asume
+          responsabilidad alguna, directa o indirecta, salvo en caso de dolo o negligencia grave. En cualquier caso, la
+          responsabilidad se limitará al importe abonado por el usuario por las funciones Premium.</p>
+
+        <h3>Artículo 6 (Suspensión y cambios del servicio)</h3>
+        <p>El Desarrollador se reserva el derecho de actualizar la Aplicación, cambiar sus funciones o suspender su
+          distribución sin previo aviso.</p>
+
+        <h3>Artículo 7 (Ley aplicable y jurisdicción)</h3>
+        <p>La interpretación de estos Términos se rige por las leyes de Japón. Cualquier disputa relacionada con la
+          Aplicación se someterá a la jurisdicción exclusiva de los tribunales correspondientes al lugar de residencia
+          del Desarrollador como tribunal de primera instancia.</p>
+
+        <div class="contact">
+          <strong>Contacto sobre términos:</strong> <br>
+          <a href="mailto:sheepboy.apps@gmail.com">sheepboy.apps@gmail.com</a>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      © 2026 sheepboy. All rights reserved.
+    </footer>
+
   </div>
 
-</div>
+  <script>
+    function showLang(lang, button) {
+      document.querySelectorAll('.lang').forEach(el => {
+        el.classList.remove('active');
+      });
 
-<!-- FOOTER -->
-<div class="footer">
-  © 2026 sheepboy. All rights reserved.
-</div>
+      document.querySelectorAll('.lang-nav button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      document.getElementById(lang).classList.add('active');
+      button.classList.add('active');
+    }
+  </script>
 
 </body>
+
 </html>
